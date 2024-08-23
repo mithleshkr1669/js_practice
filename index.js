@@ -131,26 +131,31 @@
 // console.log(sortedMergedArray);  // Outputs: [0, 3, 4, 4, 6, 30, 31]
 
 // polyfill of Array.prototype.every
-Array.prototype.myMap = function(callback) {
-    const arr = this; // `this` refers to the array the method is called on
-    const result = []; // Create a new array to store the results
+// Array.prototype.myMap = function(callback) {
+//     const arr = this; // `this` refers to the array the method is called on
+//     const result = []; // Create a new array to store the results
 
-    for (let i = 0; i < arr.length; i++) {
-       let boolean_value=callback(arr[i]); // Apply the callback to each element and store the result
-        if(boolean_value===false){
-          return false
-        }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//        let boolean_value=callback(arr[i]); // Apply the callback to each element and store the result
+//         if(boolean_value===false){
+//           return false
+//         }
+//     }
   
-    return true// Return the new array
-};
+//     return true// Return the new array
+// };
 
-const numbers = [2,4, 6, 8];
+// const numbers = [2,4, 6, 8];
 
-const allEven = numbers.myMap((everyArr) => {
-    return everyArr%2===0
-    // return everyArr * 2; // Multiply each element by 2
-});
+// const allEven = numbers.myMap((everyArr) => {
+//     return everyArr%2===0
+//     // return everyArr * 2; // Multiply each element by 2
+// });
 
-console.log(allEven); // Output: [4, 8, 12, 16]
+// console.log(allEven); // Output: [4, 8, 12, 16]
+
+
+// git remote add origin https://github.com/mithleshkr1669/js_practice.git
+// git branch -M main
+// git push -u origin main
 
