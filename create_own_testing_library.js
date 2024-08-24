@@ -1,4 +1,3 @@
-// import assert from "assert"
 let a = 2;
 let b = 3;
 let sum=a+b
@@ -14,7 +13,7 @@ const assert = {
             console.log("addition working properly")
         }
     }
-,
+, // deepEqual is used to check array and nested array or object and nested object equal or not
     deepEqual(anotherActual, anotherExpected) {
         if (JSON.stringify(anotherActual) !== JSON.stringify(anotherExpected)) {
             throw new Error(`expected ${JSON.stringify(anotherExpected)},but got ${JSON.stringify(anotherActual)}`)
