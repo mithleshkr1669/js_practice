@@ -1,12 +1,31 @@
 // lodash groupby polyfill
-let result = {};
 
-function group(name, age) {
-    if (result[age]) {
-        result[age].push(name)
+function groupBy(people,callback) {
+    let result = {};
+    // console.log(callback)
+    if (typeof callback === "function") {
+        for (let i = 0; i < people.length; i++){
+            let results = callback(people[i])
+            if (result[results]) {
+                result[results].push(people[i].name)
+            } else {
+                result[results]=[people[i].name]
+            }
+        }
     } else {
-        result[age]=[name]
+        for (let i = 0; i < people.length; i++){
+            let name = people[i].name;
+            let age=people[i].age
+            if (result[age]) {
+                result[age].push(name)
+            } else {
+                result[age]=[name]
+            }  
+        } 
     }
+    
+    
+console.log("result",result)
   
 }
 
@@ -17,10 +36,9 @@ const people = [
     { name: "Sara", age: 25 },
     { name: "Chris", age: 20 }
 ];
-for (let i = 0; i < people.length; i++){
 
-    group(people[i].name,people[i].age)
+groupBy(people,function(people){
+    return people.age%2===0?"even":"odd"
+ })
     
-}  
 
-console.log("result",result)
