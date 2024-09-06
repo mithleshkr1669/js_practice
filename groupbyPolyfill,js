@@ -2,7 +2,7 @@
 
 function groupBy(people,callback) {
     let result = {};
-    // console.log(callback)
+    // check if user passed callBack function or not
     if (typeof callback === "function") {
         for (let i = 0; i < people.length; i++){
             let results = callback(people[i])
